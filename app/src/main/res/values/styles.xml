@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="rating_star">
+        <item name="android:layout_height">12dp</item>
+        <item name="android:layout_width">12dp</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:src">@drawable/star</item>
+    </style>
+    <style name="nav_btn" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_marginTop">56dp</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+    <style name="tag">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">22dp</item>
+        <item name="android:background">@drawable/tag_bg</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+</resources>
