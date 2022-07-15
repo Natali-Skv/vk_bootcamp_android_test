@@ -14,18 +14,18 @@ class DataModel(
     val description: String = "Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the \"Ancient\", whilst defending their own.",
     val reviews: List<ReviewModel> = listOf(
         ReviewModel(
-            userImage = "https://ibb.co/WcJMjSw",
+            userImage = R.drawable.avatar_1,
             userName = "Auguste Conte",
             date = "February 14, 2019",
             message = "“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”"
         ),
         ReviewModel(
-            userImage = "https://ibb.co/p1q4QZr",
+            userImage = R.drawable.avatar_2,
             userName = "Jang Marcelino",
             date = "February 14, 2019",
             message =
             "“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”"
-        )
+        ),
     ),
     val action: ActionModel = ActionModel(
         name = "Install",
@@ -35,7 +35,7 @@ class DataModel(
 )
 
 class ReviewModel(
-    val userImage: String,
+    val userImage: Int,
     val userName: String,
     val date: String,
     val message: String

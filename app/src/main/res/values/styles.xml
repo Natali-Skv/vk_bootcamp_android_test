@@ -10,6 +10,7 @@
         <item name="android:layout_width">56dp</item>
         <item name="android:layout_height">56dp</item>
         <item name="android:layout_marginTop">56dp</item>
+        <item name="android:background">@drawable/circle_btn</item>
         <item name="android:scaleType">fitCenter</item>
     </style>
     <style name="tag">
@@ -20,7 +21,13 @@
         <item name="android:paddingStart">10dp</item>
         <item name="android:paddingEnd">10dp</item>
         <item name="android:textColor">@color/blue</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
         <item name="android:textSize">10sp</item>
     </style>
+    <style name="roundedImageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
 
 </resources>

@@ -3,11 +3,13 @@ package com.sirius.test_app
 import android.graphics.PorterDuff
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.sirius.test_app.databinding.AppDetailsBinding
 
 //import
@@ -17,23 +19,61 @@ import com.sirius.test_app.databinding.AppDetailsBinding
 //можносделать как будто у нас много приложений может быть , добавить функцию получения данный приложения по айди, по умолчанию поставить айди
 class AppDetailsActivity : AppCompatActivity() {
     private lateinit var bindingClass: AppDetailsBinding
+    private val currAppData=DataModel()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingClass=AppDetailsBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
 
-        val currAppData=DataModel()
-
         bindingClass.banner.setImageResource(currAppData.image)
         bindingClass.logo.setImageResource(currAppData.logo)
         bindingClass.appTitle.text=currAppData.name
         bindingClass.appUsers.text=currAppData.gradeCnt
+        bindingClass.description.text=currAppData.description
+        bindingClass.rating.text=currAppData.rating.toString().subSequence(0,3)
+        bindingClass.reviewsCount.text=currAppData.gradeCnt
 
-        if (currAppData.rating < 4.5) bindingClass.star5.setColorFilter(R.color.gray)
-        if (currAppData.rating < 3.5) bindingClass.star4.setColorFilter(R.color.gray)
-        if (currAppData.rating < 2.5) bindingClass.star3.setColorFilter(R.color.gray)
-        if (currAppData.rating < 1.5) bindingClass.star2.setColorFilter(R.color.gray)
-        if (currAppData.rating < 0.5) bindingClass.star1.setColorFilter(R.color.gray)
+        if (currAppData.rating < 4.5) {
+            bindingClass.star5.setColorFilter(R.color.gray)
+            bindingClass.headerStar5.setColorFilter(R.color.gray)
+        }
+        if (currAppData.rating < 3.5) {
+            bindingClass.star4.setColorFilter(R.color.gray)
+            bindingClass.headerStar4.setColorFilter(R.color.gray)
+        }
+        if (currAppData.rating < 2.5) {
+            bindingClass.star3.setColorFilter(R.color.gray)
+            bindingClass.headerStar3.setColorFilter(R.color.gray)
+        }
+        if (currAppData.rating < 1.5) {
+            bindingClass.star2.setColorFilter(R.color.gray)
+            bindingClass.headerStar2.setColorFilter(R.color.gray)
+        }
+        if (currAppData.rating < 0.5)  {
+            bindingClass.star1.setColorFilter(R.color.gray)
+            bindingClass.headerStar1.setColorFilter(R.color.gray)
+        }
+
+
+        for (tagText in currAppData.tags) {
+            var tagView = TextView(this, null, 0, R.style.tag)
+            tagView.text = tagText
+            tagView.id = View.generateViewId()
+            bindingClass.rootLayout.addView(tagView)
+            bindingClass.tags.addView(tagView)
+        }
+
+        createReviewsList()
+
+    }
+    private fun createReviewsList(){
+        val linearLayoutManager = LinearLayoutManager(applicationContext)
+        linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
+        bindingClass.reviewsRV.layoutManager = linearLayoutManager
+        val adapter = ReviewsAdapter(currAppData.reviews)
+        bindingClass.reviewsRV.adapter = adapter
+    }
+}
 
 //        bindingClass.star5.isGone=true
 //        val starView=ImageView(this)
@@ -62,13 +102,7 @@ class AppDetailsActivity : AppCompatActivity() {
 //        val tagView: TextView =  newTag2.findViewById(R.id.tag)
 //        tagView.text= "DDDDDDDDDDDDDDDDDDDDDD"
 
-        for (tagText in currAppData.tags) {
-            var tagView = TextView(this, null, 0, R.style.tag)
-            tagView.text = tagText
-            tagView.id = View.generateViewId()
-            bindingClass.root.addView(tagView)
-            bindingClass.tags.addView(tagView)
-        }
+
 
 
 //        bindingClass.root.addView(newTag3)
@@ -81,5 +115,3 @@ class AppDetailsActivity : AppCompatActivity() {
 //        bindingClass.stars.addView(view)
 
         // и тут отрисовываем все детальки(точнее напоняем данными)
-    }
-}
