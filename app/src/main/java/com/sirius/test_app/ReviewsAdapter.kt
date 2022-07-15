@@ -30,44 +30,8 @@ class ReviewsAdapter(private val dataOfReviews: List<ReviewModel>) : RecyclerVie
         holder.text.text=reviewData.message
     }
 
-
     override fun getItemCount(): Int {
         return dataOfReviews.size
     }
 
 }
-
-
-//
-//class ReviewsAdapter (private val reviews: List<ReviewModel>) : RecyclerView.Adapter<ReviewsAdapter.MyViewHolder>() {
-//
-//
-//    inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-////        val reviewsRV = view.findViewById(R.id.reviewsRV)
-//        val reviewsRV = view.findViewById<RecyclerView>(R.id.reviewsRV)
-//    }
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-//        val itemView = LayoutInflater.from(parent.context)
-//            .inflate(R.layout.review_item, parent, false)
-//        return MyViewHolder(itemView)
-//    }
-//
-//    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-//        val review = reviews[position]
-////        holder.reviewsRV.text = tag
-// var ava =      holder.reviewsRV?.findViewById<ImageView>(R.id.avatar)
-//        ava?.setImageResource(review.userImage)
-////        holder.reviewsRV?.findViewById<ImageView>(R.id.avatar)?.setImageResource(review.userImage)
-////        holder.reviewsRV?.text = "eeeeeeeeeeeeeeeeeeee"
-//        holder.reviewsRV?.setOnClickListener {
-////            onClickListener.onClicked(tag)
-//        }
-//    }
-//
-//
-//    override fun getItemCount(): Int {
-//        return reviews.size
-//    }
-//
-//}
