@@ -7,13 +7,3 @@
         android:height="56dp" />
 
 </shape>
-
-<!--<padding-->
-<!--android:left="5dp"-->
-<!--android:top="5dp"-->
-<!--android:right="5dp"-->
-<!--android:bottom="5dp"/>-->
-<!--<corners-->
-<!--android:bottomLeftRadius="7dp"-->
-<!--android:topLeftRadius="7dp"-->
-<!--android:topRightRadius="7dp"/>-->
