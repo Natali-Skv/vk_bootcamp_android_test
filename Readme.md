@@ -1,1 +1,4 @@
-## Заполнение данными происходит в AppDetailsActivity.kt и ReviewsAdapter.kt, поэтому, чтобы увидеть итоговую, сверстанный экран, необходимо запустить приложение
+## Заполнение данными происходит в AppDetailsActivity.kt и ReviewsAdapter.kt, поэтому, чтобы увидеть итоговый, сверстанный экран, необходимо запустить приложение
+
+![alt-text](https://github.com/Natali-Skv/vk_bootcamp_android_test/screens/1.png)
+![alt-text](https://github.com/Natali-Skv/vk_bootcamp_android_test/screens/2.png)
